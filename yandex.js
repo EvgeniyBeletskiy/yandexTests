@@ -3,6 +3,8 @@ describe("Yandex tests", function() {
     beforeEach(function() {
         originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+        browser.waitForAngularEnabled(false);
+        browser.manage().timeouts().implicitlyWait(4000);
     });
 
     afterEach(function() {
@@ -10,8 +12,7 @@ describe("Yandex tests", function() {
     });
 
     it("Location London", function() {
-        browser.waitForAngularEnabled(false);
-        browser.manage().timeouts().implicitlyWait(4000);
+
         browser.get("https://yandex.ru/");
 
         // Переключение на Лондон
