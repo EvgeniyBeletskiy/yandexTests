@@ -7,10 +7,6 @@ describe("Yandex tests", function() {
         expectation.timeoutBefore()
     });
 
-    afterEach(function() {
-        expectation.timeoutAfter()
-    });
-
     it("Else in London and Paris", function() {
 
         mainPage.openPage("https://yandex.ru/");

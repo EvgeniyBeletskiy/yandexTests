@@ -5,8 +5,8 @@ var LocationPage = function () {
         mainPage.goToLocationPage ();
         element(by.css(".input__control.input__input")).clear();
         element(by.css(".input__control.input__input")).sendKeys(city);
-        expectation.waitElement(".input__control.input__input");
-        browser.sleep("1000");
+        expectation.waitElement('/html/body/div[5]/div/ul/li[1]/div[text()='+'"'+city+'"'+']');
+        //browser.sleep("1000");
         element(by.css('.popup__items.input__popup-items > li:first-child')).click(); 
     }
 }
