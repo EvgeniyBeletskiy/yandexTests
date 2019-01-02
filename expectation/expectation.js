@@ -1,7 +1,12 @@
 var Expectation = function () {
     this.waitElement = function (elementLocator) {
         var EC = protractor.ExpectedConditions;
-        browser.wait(EC.presenceOf(elementLocator), 3000, 'Element not found');
+        browser.wait(EC.presenceOf(elementLocator), 3000);
+    }
+
+    this.isClickable = function(elementLocator) {
+        var EC = protractor.ExpectedConditions;
+        browser.wait(EC.elementToBeClickable(elementLocator), 5000);
     }
 
     this.timeoutBefore = function() {

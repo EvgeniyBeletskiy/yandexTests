@@ -5,9 +5,10 @@ var popupCity = element(by.css('.popup__items.input__popup-items > li:first-chil
 var LocationPage = function () {
     this.switchCity = function(city) {
         mainPage.goToLocationPage ();
-        inputCity.clear();
+        expectation.waitElement(inputCity);
+        inputCity.clear(inputCity);
         inputCity.sendKeys(city);
-        expectation.waitElement(popupCity);
+        expectation.isClickable(popupCity);
         //browser.sleep("1000");
         popupCity.click(); 
     }
