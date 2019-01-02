@@ -1,7 +1,7 @@
 var Expectation = function () {
     this.waitElement = function (elementLocator) {
         var EC = protractor.ExpectedConditions;
-        browser.wait(EC.presenceOf(element(by.xpath(elementLocator))), 3000, 'Element not found');
+        browser.wait(EC.presenceOf(elementLocator), 3000, 'Element not found');
     }
 
     this.timeoutBefore = function() {
